@@ -7,3 +7,5 @@ It's made as a school project for the module 152.
 * [Gian](https://github.com/Nichtgian)
 * [Manuel](https://github.com/ManuelTroxler)
 * [Fabian](https://github.com/bannwafa)
+
+![Belgrad gif](src/belgrad.gif)
