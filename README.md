@@ -17,17 +17,17 @@ It's made as a school project for the module 152.
 Further explenation of Wireframes can be found inside the documentation.
 
 ### Desktop
-![Belgrad](src/desk-home.png)
-![Belgrad](src/desk-sight.png)
-![Belgrad](src/desk-vid.png)
+![Belgrad](src/wireframe/desk-sight.png)
+![Belgrad](src/wireframe/desk-home.png)
+![Belgrad](src/wireframe/desk-vid.png)
 
 ### Tablet
-![Belgrad](src/tab-home.png)
-![Belgrad](src/tab-sight.png)
-![Belgrad](src/tab-vid.png)
+![Belgrad](src/wireframe/tab-home.png)
+![Belgrad](src/wireframe/tab-sight.png)
+![Belgrad](src/wireframe/tab-vid.png)
 
 ### Mobile
-![Belgrad](src/mob-home.png)
-![Belgrad](src/mob-home-c.png)
+![Belgrad](src/wireframe/mob-home.png)
+![Belgrad](src/wireframe/mob-home-c.png)
 
 ![Belgrad gif](src/belgrad.gif)
