@@ -1,13 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Belgrad Index</title>
+    <title>Belgrad Home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <link rel="stylesheet" href="style/style.css" type="text/css"/>
   </head>
   <body>
-    <h1>Index</h1>
-    <script src="script.js"></script>
+    <header>
+      <img src="https://via.placeholder.com/150.png?text=Logo" alt="Website belgrad logo">
+      <h1>Belgrad</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="attraction.html">Sehenswürdigkeiten</a></li>
+        <li><a href="report.html">Erfahrungsbericht</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="row">
+        <div class="col">
+          <div class="slider-controls">
+            <button onclick="skipSlide(-1)">Last</button>
+            <button onclick="skipSlide(1)">Next</button>
+          </div>
+          <div class="slider">
+            <img id="sliderImage" src="https://via.placeholder.com/200x100.png?text=Image 1" alt="image 1 alt">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <span>col</span>
+        </div>
+
+        <div class="col">
+          <span>col</span>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <span>Copyright</span>
+    </footer>
+
+    <script src="script/script.js"></script>
   </body>
 </html>
