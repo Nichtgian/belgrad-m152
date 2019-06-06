@@ -5,6 +5,8 @@ let slideImages = [
   { src: "https://via.placeholder.com/300x500.png?text=Image 3", alt: "image 3 alt" }
 ];
 
+changeMenu();
+
 function skipSlide(direction) {
   currentSlideImage = calculateNewImageIndex(direction, currentSlideImage, slideImages);
 
@@ -12,6 +14,11 @@ function skipSlide(direction) {
   let sliderElement = document.getElementById("sliderImage");
   sliderElement.src = newSlideImage.src;
   sliderElement.alt = newSlideImage.alt;
+  sliderElement.style.animation = "none";
+
+  setTimeout(() => {
+    sliderElement.style.animation = '';
+  }, 1);
 }
 
 function calculateNewImageIndex(direction, currentIndex, slides) {
@@ -66,5 +73,18 @@ function collapseAllAttractions() {
 
     col.classList.remove("zoomed");
     button.innerHTML = "<img src='src/icon/expand_more.svg' alt='icon expand_more'>";
+  }
+}
+
+function changeMenu() {
+  let menuButton = document.getElementById("menu");
+  let ul = menuButton.parentNode.querySelectorAll("ul")[0];
+
+  if ((!menuButton.innerHTML.includes("menu.svg") && window.innerWidth > 500) || menuButton.innerHTML.includes("menu.svg")) {
+    menuButton.innerHTML = "<img src='src/icon/close.svg' alt='icon close menu'>";
+    ul.style.display = "flex";
+  } else {
+    menuButton.innerHTML = "<img src='src/icon/menu.svg' alt='icon open menu'>";
+    ul.style.display = "none";
   }
 }
