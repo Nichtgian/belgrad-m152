@@ -5,7 +5,6 @@ html, body {
 
 body {
   font-family: sans-serif;
-  min-height: 100vh;
   background-color: #fafafa;
   color: #fafafa;
   min-width: 220px;
@@ -64,6 +63,7 @@ main .row {
     display: flex;
     flex-direction: row;
 }
+
 main .col {
     flex: 1 1 4vw;
     background: #dadada;
@@ -109,15 +109,6 @@ main .slider-container .right {
   right: 0;
 }
 
-@keyframes fade-image {
-  from {
-    opacity: .4
-  }
-  to {
-    opacity: 1
-  }
-}
-
 main .col-filler {
   display: flex;
   flex-direction: row;
@@ -146,11 +137,17 @@ main .col-filler {
   flex: 1 1 auto
 }
 
-/*
-main .video-container {
-  display: flex;
-  align-items: center;
-}*/
+.col-filler button {
+  border: none;
+  color: #fafafa;
+  background: none;
+  text-decoration: none;
+  height: 20px;
+}
+
+.col-filler .content span:not(.preview):not(.show), .col-filler .content img:not(.preview):not(.show) {
+  display: none;
+}
 
 main .video {
   height: 35vh;
@@ -173,12 +170,19 @@ main .video-container img {
   height: 100%;
 }
 
-
 footer {
   font-size: 2vw;
   padding: 1vw;
   width: calc(100% - 2vw);
   text-align: center;
-  bottom: 0;
   background-color: #80d6ff;
+}
+
+@keyframes fade-image {
+  from {
+    opacity: 0.5
+  }
+  to {
+    opacity: 1
+  }
 }

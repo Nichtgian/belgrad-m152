@@ -40,7 +40,13 @@ function zoomAttraction(buttonElement) {
 
   if (collapse) {
     attraction.classList.add("zoomed");
-    buttonElement.innerText = "-";
+    buttonElement.innerHTML = "<img src='src/icon/expand_less.svg' alt='icon expand_less'>";
+
+    let contentContainer = attraction.querySelectorAll(".content")[0];
+    let contentElements = contentContainer.querySelectorAll("span, img");
+    for (let i = 0; i < contentElements.length; i++) {
+      contentElements[i].style.display = "block";
+    }
   }
 }
 
@@ -51,8 +57,14 @@ function collapseAllAttractions() {
   for (let i = 0; i < attractions.length; i++) {
     let col = attractions[i];
     let button = col.querySelectorAll("button")[0];
+    let contentContainer = col.querySelectorAll(".content")[0];
+    let contentElements = contentContainer.querySelectorAll("span:not(.preview), img");
+
+    for (let i = 0; i < contentElements.length; i++) {
+      contentElements[i].style.display = "none";
+    }
 
     col.classList.remove("zoomed");
-    button.innerText = "+";
+    button.innerHTML = "<img src='src/icon/expand_more.svg' alt='icon expand_more'>";
   }
 }
