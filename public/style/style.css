@@ -1,7 +1,6 @@
 html, body {
   margin: 0;
   padding: 0;
-
 }
 
 body {
@@ -9,6 +8,7 @@ body {
   min-height: 100vh;
   background-color: #fafafa;
   color: #fafafa;
+  min-width: 220px;
 }
 
 header {
@@ -64,17 +64,91 @@ main .row {
     display: flex;
     flex-direction: row;
 }
-main .row .col {
+main .col {
     flex: 1 1 4vw;
     background: #dadada;
     padding: 1vw;
     margin: 0.5vw;
 }
 
+main .slider-container {
+  height: 35vh;
+  position: relative;
+}
+
+main .slider-image {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+main .slider-image img {
+  box-sizing: border-box;
+  animation-name: fade-image;
+  animation-duration: 1.5s;
+  margin: auto;
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+}
+
+main .slider-container button {
+  position: absolute;
+  top: 50%;
+  border: none;
+  color: #fafafa;
+  background: none;
+  text-decoration: none;
+}
+
+main .slider-container button:hover {
+  color: #6a6a6a
+}
+
+main .slider-container .right {
+  right: 0;
+}
+
+@keyframes fade-image {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
+}
+
+main .col-filler {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.col-filler .col {
+  flex: 1 1 calc(50% - 3vw);
+  display: flex;
+  padding: 1vw;
+  margin: 0.5vw;
+}
+
+.col-filler .open {
+  flex: 1 1 calc(100% - 3vw);
+  display: flex;
+  padding: 1vw;
+  margin: 0.5vw;
+}
+
+.col-filler .col > span {
+  flex: 1 1 auto
+}
+
+.col-filler .open > span {
+  flex: 1 1 auto
+}
+
 footer {
   font-size: 2vw;
   padding: 1vw;
-  position: absolute;
   width: calc(100% - 2vw);
   text-align: center;
   bottom: 0;
