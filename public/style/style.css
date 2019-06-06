@@ -131,18 +131,18 @@ main .col-filler {
   margin: 0.5vw;
 }
 
-.col-filler .open {
+.col-filler .col > span {
+  flex: 1 1 auto
+}
+
+.col-filler .zoomed {
   flex: 1 1 calc(100% - 3vw);
   display: flex;
   padding: 1vw;
   margin: 0.5vw;
 }
 
-.col-filler .col > span {
-  flex: 1 1 auto
-}
-
-.col-filler .open > span {
+.col-filler .zoomed > span {
   flex: 1 1 auto
 }
 

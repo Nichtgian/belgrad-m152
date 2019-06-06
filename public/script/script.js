@@ -31,3 +31,24 @@ function calculateNewImageIndex(direction, currentIndex, slides) {
 
   return index;
 }
+
+function zoomAttraction(buttonElement) {
+  let attraction = buttonElement.parentNode;
+  collapseAllAttractions();
+
+  attraction.classList.add("zoomed");
+  buttonElement.innerText = "-";
+}
+
+function collapseAllAttractions() {
+  let attractions = document.getElementById("attractions");
+  attractions =  attractions.querySelectorAll("#attractions > .col");
+
+  for (let i = 0; i < attractions.length; i++) {
+    let col = attractions[i];
+    let button = col.querySelectorAll("button")[0];
+
+    col.classList.remove("zoomed");
+    button.innerText = "+";
+  }
+}
