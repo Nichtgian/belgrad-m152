@@ -151,6 +151,10 @@ main .col-filler {
   max-width: 100%;
 }
 
+.zoomed {
+  flex: 1 1 100% !important;
+}
+
 .colfiller .image-container {
   display: table;
 }
