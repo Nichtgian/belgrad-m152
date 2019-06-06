@@ -41,7 +41,7 @@ nav {
 nav ul {
   height: auto;
   margin: 0;
-  padding: 0.5em;
+  padding: 1em;
   list-style: none;
 }
 
@@ -161,8 +161,7 @@ main .col-filler {
 
 .col-filler .image-container img {
   margin: 0.5em;
-  max-width: 100%;
-  width: calc(50% - 1em);
+  width: calc(33% - 1em);
   float: left;
 }
 
@@ -182,7 +181,7 @@ main .video-container img {
   box-sizing: border-box;
   margin: auto;
   width: 100%;
-  max-width: 100%;
+  max-width: 1000px;
   height: auto%;
 }
 
@@ -246,6 +245,7 @@ button:hover {
   }
 
   .col-filler .content img {
+    width: calc(50% - 1em);
     margin: 0.5em;
   }
 }
