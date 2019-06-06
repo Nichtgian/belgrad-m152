@@ -34,10 +34,14 @@ function calculateNewImageIndex(direction, currentIndex, slides) {
 
 function zoomAttraction(buttonElement) {
   let attraction = buttonElement.parentNode;
+  let collapse = !attraction.classList.contains("zoomed");
+
   collapseAllAttractions();
 
-  attraction.classList.add("zoomed");
-  buttonElement.innerText = "-";
+  if (collapse) {
+    attraction.classList.add("zoomed");
+    buttonElement.innerText = "-";
+  }
 }
 
 function collapseAllAttractions() {
