@@ -30,4 +30,8 @@ Further explenation of Wireframes can be found inside the documentation.
 ![Belgrad](src/wireframe/mob-home.png)
 ![Belgrad](src/wireframe/mob-home-c.png)
 
+## Prototype
+Attractions in Tablet Landscape
+![Belgrad](src/prototype-tablet.png)
+
 ![Belgrad gif](src/belgrad.gif)
