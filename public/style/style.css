@@ -13,7 +13,6 @@ body {
   font-size: 1em;
   background-color: #fafafa;
   color: #fafafa;
-  min-width: 240px;
   position: relative;
 }
 
@@ -208,7 +207,7 @@ main .video-container img {
   margin: auto;
   width: 100%;
   max-width: 1000px;
-  height: auto%;
+  height: auto;
 }
 
 footer {

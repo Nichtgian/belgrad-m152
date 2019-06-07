@@ -1,3 +1,4 @@
+let lastWindowInnerWidth = window.innerWidth;
 let currentSlideImage = 0;
 let slideImages = [
   { src: "https://via.placeholder.com/200x100.png?text=Image 1", alt: "image 1 alt" },
@@ -6,6 +7,13 @@ let slideImages = [
 ];
 
 changeMenu();
+window.onresize = () => {
+  let newInnerWidth = window.innerWidth;
+  if (lastWindowInnerWidth <= 500 && window.innerWidth > 500) {
+    changeMenu();
+  }
+  lastWindowInnerWidth = newInnerWidth;
+}
 
 function skipSlide(direction) {
   currentSlideImage = calculateNewImageIndex(direction, currentSlideImage, slideImages);
@@ -80,7 +88,7 @@ function changeMenu() {
   let menuButton = document.getElementById("menu");
   let ul = menuButton.parentNode.querySelectorAll("ul")[0];
 
-  if ((!menuButton.innerHTML.includes("menu.svg") && window.innerWidth > 500) || menuButton.innerHTML.includes("menu.svg")) {
+  if (window.innerWidth > 500 || menuButton.innerHTML.includes("menu.svg")) {
     menuButton.innerHTML = "<img src='src/icon/close.svg' alt='icon close menu'>";
     ul.style.display = "flex";
   } else {
