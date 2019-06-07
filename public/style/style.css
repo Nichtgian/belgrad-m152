@@ -1,6 +1,11 @@
+html {
+  height: 100%;
+}
+
 html, body {
   margin: 0;
   padding: 0;
+  min-height: 100%;
 }
 
 body {
@@ -8,7 +13,28 @@ body {
   font-size: 1em;
   background-color: #fafafa;
   color: #fafafa;
-  min-width: 220px;
+  min-width: 240px;
+  position: relative;
+}
+
+body::after {
+  content: "";
+  display: block;
+  height: 2em;
+}
+
+button {
+  width: 3em;
+  height: 3em;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  text-decoration: none;
+  outline: none;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 header {
@@ -190,20 +216,10 @@ footer {
   width: calc(100% - 1em);
   text-align: center;
   background-color: #80d6ff;
-}
-
-button {
-  width: 3em;
-  height: 3em;
-  border: none;
-  border-radius: 50%;
-  background: none;
-  text-decoration: none;
-  outline: none;
-}
-
-button:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  bottom: 0;
+  margin-top: 0.5em;
+  height: 1.5em;
 }
 
 @media screen and (max-width: 1024px) {
