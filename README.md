@@ -5,7 +5,7 @@ It's made as a school project for the module 152.
 
 ## Content
 1. [/documentation](https://github.com/Nichtgian/belgrad-m152/tree/master/documentation) project documentation as word
-1. [/public](https://github.com/Nichtgian/belgrad-m152/tree/master/documentation) conatins source of [prototype](https://nichtgian.github.io/belgrad-m152/public/index.html)
+1. [/public](https://github.com/Nichtgian/belgrad-m152/tree/master/public) conatins source of [prototype](https://nichtgian.github.io/belgrad-m152/public/index.html)
 1. [/src](https://github.com/Nichtgian/belgrad-m152/tree/master/src) (image-)files used in the README
 1. [/task](https://github.com/Nichtgian/belgrad-m152/tree/master/task) the given project task and goal
 
