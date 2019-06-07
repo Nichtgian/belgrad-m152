@@ -233,7 +233,7 @@ button:hover {
     margin-top: 0.5em;
   }
 
-  main .row:last-child {
+  main .row:last-child, .col-filler .col:last-child {
     margin-bottom: 0.5em;
   }
 
@@ -241,7 +241,8 @@ button:hover {
     flex: 1 1 100%;
     display: flex;
     padding: 0.5em;
-    margin: 0.5em;
+    margin: 0;
+    margin-top: 0.5em;
   }
 
   .col-filler .content img {

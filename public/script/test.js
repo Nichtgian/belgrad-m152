@@ -1,6 +1,49 @@
-test();
+runTests();
 
-function testCalculateNewImageIndex(testCase) {
+function runTests() {
+  setupTestCalculateNewImageIndex();
+}
+
+function setupTestCalculateNewImageIndex() {
+  let testConfigurations = [{
+    testSlides: [
+      { src: "https://via.placeholder.com/200x100.png?text=Image 1", alt: "image 1 alt" },
+      { src: "https://via.placeholder.com/800x300.png?text=Image 2", alt: "image 2 alt" },
+      { src: "https://via.placeholder.com/300x500.png?text=Image 3", alt: "image 3 alt" }
+    ],
+    testCases: [
+      { setup: { direction: 1, currentIndex: 0 }, expectedResult: 1 },
+      { setup: { direction: 1, currentIndex: 1 }, expectedResult: 2 },
+      { setup: { direction: 1, currentIndex: 2 }, expectedResult: 0 }
+    ]}, {
+    testSlides: [
+      { src: "https://via.placeholder.com/200x100.png?text=Image 1", alt: "image 1 alt" },
+      { src: "https://via.placeholder.com/800x300.png?text=Image 2", alt: "image 2 alt" },
+      { src: "https://via.placeholder.com/300x500.png?text=Image 3", alt: "image 3 alt" },
+      { src: "https://via.placeholder.com/300x500.png?text=Image 4", alt: "image 4 alt" }
+    ],
+    testCases: [
+      { setup: { direction: -1, currentIndex: 3 }, expectedResult: 2 },
+      { setup: { direction: -1, currentIndex: 2 }, expectedResult: 1 },
+      { setup: { direction: -1, currentIndex: 1 }, expectedResult: 0 },
+      { setup: { direction: -1, currentIndex: 0 }, expectedResult: 3 }
+    ]}
+  ];
+
+  testConfigurations.forEach((testConfiguration) => {
+    testConfiguration.testCases.forEach((testCase) => {
+      let testResult = testCalculateNewImageIndex(testConfiguration.testSlides, testCase);
+
+      if (!testResult.passed) {
+        console.error("Test failed! expected(" + testResult.testCase.expectedResult + ") but got(" + testResult.value + ")");
+      } else {
+        console.log("Test passed! got(" + testResult.value + ")")
+      }
+    });
+  });
+}
+
+function testCalculateNewImageIndex(testSlides, testCase) {
   let testResult = {
     passed: true,
     message: "",
@@ -8,7 +51,7 @@ function testCalculateNewImageIndex(testCase) {
     testCase: testCase
   }
 
-  let calculatedIndex = calculateNewImageIndex(testCase.direction, testCase.currentIndex, testCase.slides);
+  let calculatedIndex = calculateNewImageIndex(testCase.setup.direction, testCase.setup.currentIndex, testSlides);
   testResult.value = calculatedIndex;
 
   if (calculatedIndex != testCase.expectedResult) {
@@ -16,31 +59,4 @@ function testCalculateNewImageIndex(testCase) {
   }
 
   return testResult;
-}
-
-function test() {
-  let testSlides = [
-    { src: "https://via.placeholder.com/200x100.png?text=Image 1", alt: "image 1 alt" },
-    { src: "https://via.placeholder.com/800x300.png?text=Image 2", alt: "image 2 alt" },
-    { src: "https://via.placeholder.com/300x500.png?text=Image 3", alt: "image 3 alt" }
-  ];
-
-  let testCases = [
-    { direction: 1, slides: testSlides, currentIndex: 0, expectedResult: 1 },
-    { direction: 1, slides: testSlides, currentIndex: 1, expectedResult: 2 },
-    { direction: 1, slides: testSlides, currentIndex: 2, expectedResult: 0 },
-    { direction: -1, slides: testSlides, currentIndex: 2, expectedResult: 1 },
-    { direction: -1, slides: testSlides, currentIndex: 1, expectedResult: 0 },
-    { direction: -1, slides: testSlides, currentIndex: 0, expectedResult: 2 },
-  ];
-
-  for (let i = 0; i < testCases.length; i++) {
-    testResult = testCalculateNewImageIndex(testCases[i]);
-
-    if (!testResult.passed) {
-      console.error("Test failed! expected(" + testResult.testCase.expectedResult + ") but got(" + testResult.value + ")");
-    } else {
-      console.log("Test passed! got(" + testResult.value + ")")
-    }
-  }
 }
