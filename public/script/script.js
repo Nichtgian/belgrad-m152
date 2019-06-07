@@ -58,10 +58,9 @@ function zoomAttraction(buttonElement) {
     buttonElement.innerHTML = "<img src='src/icon/expand_less.svg' alt='icon expand_less'>";
 
     let contentContainer = attraction.querySelectorAll(".content")[0];
-    let contentElements = contentContainer.querySelectorAll("span, img");
-    for (let i = 0; i < contentElements.length; i++) {
-      contentElements[i].style.display = "block";
-    }
+    contentContainer.querySelectorAll("span, img").forEach((contentElement) => {
+      contentElement.style.display = "block";
+    });
   }
 }
 
@@ -69,19 +68,16 @@ function collapseAllAttractions() {
   let attractions = document.getElementById("attractions");
   attractions =  attractions.querySelectorAll("#attractions > .col");
 
-  for (let i = 0; i < attractions.length; i++) {
-    let col = attractions[i];
+  attractions.forEach((col) => {
     let button = col.querySelectorAll("button")[0];
     let contentContainer = col.querySelectorAll(".content")[0];
-    let contentElements = contentContainer.querySelectorAll("span:not(.preview), img");
-
-    for (let i = 0; i < contentElements.length; i++) {
-      contentElements[i].style.display = "none";
-    }
+    contentContainer.querySelectorAll("span:not(.preview), img").forEach((contentElement) => {
+      contentElement.style.display = "none";
+    });
 
     col.classList.remove("zoomed");
     button.innerHTML = "<img src='src/icon/expand_more.svg' alt='icon expand_more'>";
-  }
+  });
 }
 
 function changeMenu() {
