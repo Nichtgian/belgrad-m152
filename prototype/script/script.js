@@ -1,23 +1,12 @@
-const COLORPROPERTIES = [
-  { name: "--main-primary", light: "#0077c2", dark: "#8e0000" },
-  { name: "--main-secondary", light: "#42a5f5", dark: "#d50000" },
-  { name: "--main-tertiary", light: "#80d6ff", dark: "#ff1744" }
-];
-
-const SLIDEIMAGES = [
+let lastWindowInnerWidth = window.innerWidth;
+let currentSlideImage = 0;
+let slideImages = [
   { src: "https://via.placeholder.com/200x100.png?text=Image 1", alt: "image 1 alt" },
   { src: "https://via.placeholder.com/800x300.png?text=Image 2", alt: "image 2 alt" },
   { src: "https://via.placeholder.com/300x500.png?text=Image 3", alt: "image 3 alt" }
 ];
 
-const DAYINMS = 24 * 60 * 60 *1000;
-
-let lastWindowInnerWidth = window.innerWidth;
-let currentSlideImage = 0;
-
-initializeTheme();
 changeMenu();
-
 window.onresize = () => {
   let newInnerWidth = window.innerWidth;
   if (lastWindowInnerWidth <= 500 && window.innerWidth > 500) {
@@ -27,9 +16,9 @@ window.onresize = () => {
 }
 
 function skipSlide(direction) {
-  currentSlideImage = calculateNewImageIndex(direction, currentSlideImage, SLIDEIMAGES);
+  currentSlideImage = calculateNewImageIndex(direction, currentSlideImage, slideImages);
 
-  let newSlideImage = SLIDEIMAGES[currentSlideImage];
+  let newSlideImage = slideImages[currentSlideImage];
   let sliderElement = document.getElementById("sliderImage");
   sliderElement.src = newSlideImage.src;
   sliderElement.alt = newSlideImage.alt;
@@ -102,61 +91,4 @@ function changeMenu() {
     menuButton.innerHTML = "<img src='src/icon/menu.svg' alt='icon open menu'>";
     ul.style.display = "none";
   }
-}
-
-function initializeTheme() {
-  let currentTheme = getCookie("theme");
-  if (currentTheme == null || currentTheme == undefined) {
-    setCookie("theme", "blue");
-  } else {
-    toggleTheme(currentTheme);
-  }
-}
-
-function changeTheme() {
-  let currentTheme = getCookie("theme");
-  if (currentTheme == "red" || currentTheme == null || currentTheme == undefined) {
-    setCookie("theme", "blue");
-    toggleTheme("blue");
-  } else {
-    setCookie("theme", "red");
-    toggleTheme("red");
-  }
-}
-
-function toggleTheme(color) {
-  let root = document.documentElement;
-  let toggleButton = document.getElementById("toggle");
-
-  if (color == "blue") {
-    toggleButton.innerHTML = "<img src='src/icon/toggle_off.svg' alt='icon toggle theme off'>";
-  } else {
-    toggleButton.innerHTML = "<img src='src/icon/toggle_on.svg' alt='icon toggle theme on'>";
-  }
-
-  COLORPROPERTIES.forEach((property) => {
-    let theme = color == "blue" ? property.light : property.dark;
-    root.style.setProperty(property.name, theme);
-  });
-}
-
-function setCookie(name, value) {
-    let expires = new Date(new Date().getTime() + (100 * DAYINMS)).toUTCString();
-    document.cookie = name + "=" + value + "; expires=" + expires + "; path=/";
-}
-
-function getCookie(name) {
-  let value = "; " + document.cookie;
-  let parts = value.split("; " + name + "=");
-
-  if (parts.length == 2) {
-    return parts
-      .pop()
-      .split(";")
-      .shift();
-  }
-}
-
-function deleteCookie(name) {
-    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
 }

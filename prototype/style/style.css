@@ -1,14 +1,3 @@
-:root {
-  --font-light: #fafafa;
-  --font-dark: #1c313a;
-  --main-hover: #dadada;
-  --main-primary: #0077c2;
-  --main-secondary: #42a5f5;
-  --main-tertiary: #80d6ff;
-  --main-light: #eceff1;
-  --main-dark: #fafafa;
-}
-
 html {
   height: 100%;
 }
@@ -22,9 +11,9 @@ html, body {
 body {
   font-family: sans-serif;
   font-size: 1em;
+  background-color: #fafafa;
+  color: #fafafa;
   position: relative;
-  background-color: var(--main-light);
-  color: var(--font-light);
 }
 
 body::after {
@@ -50,30 +39,13 @@ button:hover {
 header {
   height: auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: var(--main-primary);
+  background-color: #0077c2;
 }
 
-header > img {
+header img {
   height: 4em;
   padding: 0.5em;
-}
-
-header button {
-  width: 3em;
-  height: 3em;
-  margin: 0.5em;
-  padding: 0;
-  border: none;
-  border-radius: 50%;
-  background: none;
-  text-decoration: none;
-  outline: none;
-}
-
-header button img {
-  height: 3em;
 }
 
 h1 {
@@ -88,7 +60,7 @@ h2 {
 nav {
   height: auto;
   min-height: 3em;
-  background-color: var(--main-secondary);
+  background-color: #42a5f5;
 }
 
 nav ul {
@@ -106,12 +78,12 @@ nav li {
 
 nav a {
   font-size: 1.2em;
+  color: #fafafa;
   text-decoration: none;
-  color: var(--font-light);
 }
 
 nav a:hover, nav .active {
-  color: var(--main-hover);
+  color: #dadada;
 }
 
 nav button {
@@ -121,7 +93,6 @@ nav button {
 
 main {
   padding: 0.5em;
-  color: var(--font-dark);
 }
 
 main .row {
@@ -131,10 +102,9 @@ main .row {
 
 main .col {
     flex: 1 1 1em;
-    background: var(--main-dark);
+    background: #dadada;
     padding: 0.5em;
     margin: 0.5em;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 main .slider-container {
@@ -163,8 +133,7 @@ main .slider-container button {
 }
 
 main .slider-container button:hover {
-  cursor: pointer;
-  color: var(--main-primary);
+  color: #6a6a6a
 }
 
 main .slider-container .right {
@@ -193,12 +162,9 @@ main .col-filler {
 }
 
 .col-filler button {
-  margin-right: 0.5em;
-}
-
-.col-filler button:hover {
-  cursor: pointer;
-  color: var(--main-primary);
+  color: #fafafa;
+  background: none;
+  text-decoration: none;
 }
 
 .col-filler .content span:not(.preview):not(.show), .col-filler .content img:not(.preview):not(.show) {
@@ -248,7 +214,7 @@ footer {
   padding: 0.5em;
   width: calc(100% - 1em);
   text-align: center;
-  background-color: var(--main-tertiary);
+  background-color: #80d6ff;
   position: absolute;
   bottom: 0;
   margin-top: 0.5em;
@@ -316,7 +282,6 @@ footer {
   main .col {
     margin-left: 0;
     margin-right: 0;
-    box-shadow: none;
   }
 
   .col-filler .content img {
