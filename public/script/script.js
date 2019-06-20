@@ -105,15 +105,15 @@ function changeMenu() {
 }
 
 function initializeTheme() {
+  document.getElementById("toggle").style.display = "block";
+  document.getElementById("toggle-placeholder").style.display = "none";
+
   let currentTheme = getCookie("theme");
   if (currentTheme == null || currentTheme == undefined) {
     setCookie("theme", "blue");
   } else {
     toggleTheme(currentTheme);
   }
-
-  document.getElementById("toggle").style.display = "block";
-  document.getElementById("toggle-placeholder").style.display = "none";
 }
 
 function changeTheme() {
