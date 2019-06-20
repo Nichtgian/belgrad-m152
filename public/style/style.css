@@ -69,6 +69,7 @@ header button {
   border-radius: 50%;
   background: none;
   text-decoration: none;
+  display: none;
   outline: none;
 }
 

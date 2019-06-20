@@ -111,6 +111,9 @@ function initializeTheme() {
   } else {
     toggleTheme(currentTheme);
   }
+
+  document.getElementById("toggle").style.display = "block";
+  document.getElementById("toggle-placeholder").style.display = "none";
 }
 
 function changeTheme() {
