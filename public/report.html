@@ -18,8 +18,8 @@
       <button id="menu" onclick="changeMenu()"><img src="src/icon/close.svg" alt="icon close menu"></button>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="attraction.html">Sehenswürdigkeiten</a></li>
-        <li><a href="report.html" class="active">Erfahrungsbericht</a></li>
+        <li><a href="attraction.html">Themen</a></li>
+        <li><a href="report.html" class="active">Bericht</a></li>
       </ul>
     </nav>
 
@@ -27,16 +27,24 @@
       <div class="row">
         <div class="col">
           <div class="video">
-            <div class="video-container">
+            <div class="video-comment">
+              <h2>Videobericht</h2>
+            </div>
+            <div id="temp-video-container" style="display:none;" class="video-container">
               <video controls>
-                <source src="src/video/report00.mp4" type="video/mp4">
+                <source src="src/video/report-temp.mp4" type="video/mp4">
+                  Video not supported.
+                </video>
+            </div>
+            <div id="full-video-container" class="video-container">
+              <video id="full-video" controls>
+                <source src="src/video/report.mp4" type="video/mp4">
                   Video not supported.
                 </video>
             </div>
             <div class="video-comment">
-              <h2>Video</h2>
               <span>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                Ein von uns aufgenommenen Video welches unsere Erlebnisse aus den Ferien in der Hauptstadt wiederspiegelt.
               </span>
             </div>
           </div>
@@ -45,7 +53,7 @@
     </main>
 
     <footer>
-      <span>Copyright</span>
+      <span>Copyright© Belgrad M152</span>
     </footer>
 
     <script src="script/script.js"></script>

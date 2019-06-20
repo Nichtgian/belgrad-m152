@@ -1,0 +1,2 @@
+ffmpeg -i report.mp4 -b 500000 -c:v libx264 -r 24 out.mp4
+ffmpeg -i report.mp4 -b 500000 -c:v libx264 -r 24 -f segment -segment_time 10 report%02d.mp4

@@ -20,6 +20,7 @@ let currentSlideImage = 0;
 
 initializeTheme();
 changeMenu();
+initializeVideo();
 
 window.onresize = () => {
   let newInnerWidth = window.innerWidth;
@@ -144,6 +145,27 @@ function toggleTheme(color) {
     let theme = color == "blue" ? property.light : property.dark;
     root.style.setProperty(property.name, theme);
   });
+}
+
+function initializeVideo() {
+  let tempVideo = document.getElementById("temp-video-container");
+  let fullvideo = document.getElementById("full-video-container");
+  let video = document.getElementById("full-video");
+
+  if (tempVideo == null) {
+    return;
+  };
+
+  tempVideo.style.display = "block";
+  fullvideo.style.display = "none";
+
+  let loadingCheck = setInterval(() => {
+    if (video.readyState >= 3) {
+      tempVideo.style.display = "none";
+      fullvideo.style.display = "block";
+      clearInterval(loadingCheck);
+    }
+  }, 1000);
 }
 
 function setCookie(name, value) {

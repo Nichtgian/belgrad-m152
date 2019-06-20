@@ -138,6 +138,11 @@ main .col {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
+main .col h2 {
+  margin-left: 0;
+  margin-top: 0;
+}
+
 main .slider-container {
   height: 35em;
   position: relative;
@@ -189,6 +194,7 @@ main .col-filler {
 
 .col-filler .content h2 {
   margin: 0;
+  margin-bottom: 0.5em;
 }
 
 .col-filler .col > span {
@@ -249,6 +255,10 @@ main .video-container video {
   width: 100%;
   max-width: 1000px;
   height: auto;
+}
+
+main .video-comment {
+  margin-top: 1em;
 }
 
 footer {
